@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shooting Game</title>
+	<link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+	<div id="background">
+		<img src="./images/bg1.jpg"/>
+	</div>
+	<div id="nav">
+		<h2> Shooting Game!</h2>
+	</div>
+	<div id="start" onclick="start()">
+		<button><h3>OK</h3></button>
+	</div>
+	<div id="rule" onclick="rule()">
+		<button><h3>Rules</h3></button>
+	</div>
+	<div id="ranklist" onclick="ranklist()">
+		<button><h3>Ranklist</h3></button>
+	</div>
+	<div id="plane">
+		<div class="planeb"><div onclick="chose(this)"><img class="feiji" src="./images/plane1.jpg" /></div></div>
+		<div class="planeb"><div onclick="chose(this)"><img class="feiji" src="./images/plane2.jpg" /></div></div>
+		<div class="planeb"><div onclick="chose(this)"><img class="feiji" src="./images/plane3.jpg" /></div></div>
+		<div class="planeb"><div onclick="chose(this)"><img class="feiji" src="./images/plane4.jpg" /></div></div>
+		<div class="planeb"><div onclick="chose(this)"><img class="feiji" src="./images/plane5.jpg" /></div></div>
+		<div class="planeb"><div onclick="chose(this)"><img class="feiji" src="./images/plane6.jpg" /></div></div>
+	</div>
+	<div id="gameArea" onkeydown="kd()" tabindex="0">
+		<div id="restart">
+			<p id="restartcontent"></p>
+		</div>
+		<div id="statu">
+			<p id="life"></p>
+			<p id="destination"></p>
+			<p id="score"></p>
+		</div>
+		<div id="game">
+			<img id="gamebg" src="./images/bg2.jpg"/>
+			<div id="stop"><img src="./images/stop.jpg"/></div>
+			<img id="user" src=""/>
+		</div>
+	</div>
+	<div id="enemy">
+		<div id="enemy1"><p>You can upload enemy's picture below</p> </div>
+		<div id="dropbox">123</div>
+	</div>
+	<div id="bg">
+	</div>
+	<div id="showrule">
+		<h1>Welcome to Shooting Game World</h1>
+		<p>You should control the aircraft to the destination.</p>
+		<p>The game end when your aircraft collision with the </p>
+		<p>enemy 20 times or your aircraft reach the destination.</p>
+		<p>Every time you defeat an enemy,add 1 point.</p>
+		<p>Good Luck.</p>
+		<button id="close" onclick="closed()">Return</button>
+	</div>
+	<div id="showranklist">
+	</div>
+	<audio id="Hit" src="http://125.227.242.245/JavaScript/JS/Hit.wav"></audio>
+	<audio id="Shoot" src="http://125.227.242.245/JavaScript/JS/Shoot.wav"></audio>
+	<audio id="bgaudio" src="./audio/bgaudio.mp3" loop="loop"></audio>
+	<script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
