@@ -337,6 +337,7 @@ function checkboom()
 			document.getElementById("Hit").play();
 			life--;
 			m[i].parentNode.removeChild(m[i]);
+			clearInterval(m[i].T);
 			m.splice(i,1);
 		}
 	}
@@ -395,6 +396,15 @@ function kd()
 		case 32:
 			pause();
 			break;
+		case 82:
+			for(var i = 0; i < m.length; i++)
+			{
+				document.getElementById("Hit").play();
+				m[i].parentNode.removeChild(m[i]);
+				clearInterval(m[i].T);
+				m.splice(i,1);
+			}
+			break;
 		case 88:
 			document.getElementById("Shoot").play();
 			var x = px2int(getStyle(document.getElementById("user"),"top")) - 10;
@@ -435,9 +445,15 @@ function start()
 	Tb = clearInterval(Tb);
 	Te = clearInterval(Te);
 	for(var i = 0; i < m.length; i++)
+	{
 		m[i].parentNode.removeChild(m[i]);
+		clearInterval(m[i].T);
+	}
 	for(var i = 0; i < sho.length;i++)
+	{
 		sho[i].parentNode.removeChild(sho[i]);
+		clearInterval(sho[i].T);
+	}
 	m.splice(0,m.length);
 	sho.splice(0,sho.length);
 	document.getElementById("start").style.display="none";
